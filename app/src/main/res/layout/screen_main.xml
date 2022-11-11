@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#042959"
+    tools:context=".mvp.ui.MainScreen">
+
+    <View
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/color_toolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_settings"
+        style="@style/StyleIcon"
+        android:layout_marginStart="16dp"
+        android:background="@drawable/ic_menu"
+        app:layout_constraintBottom_toBottomOf="@id/toolbar"
+        app:layout_constraintStart_toStartOf="@id/toolbar"
+        app:layout_constraintTop_toTopOf="@id/toolbar"
+        app:layout_constraintVertical_bias="0.457"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/current_coins"
+        style="@style/StyleTextCoins"
+        app:drawableStartCompat="@drawable/ic_coin"
+        app:layout_constraintBottom_toBottomOf="@id/toolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="gone"
+        tools:text="0" />
+
+    <FrameLayout
+        android:id="@+id/container_photo1"
+        style="@style/StyleContainerImages">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/image1"
+            style="@style/StyleImages"
+            android:src="@drawable/animal_1_1_panda" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/container_photo2"
+        style="@style/StyleContainerImages">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/image2"
+            style="@style/StyleImages"
+            android:src="@drawable/animal_1_2_panda" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/container_photo3"
+        style="@style/StyleContainerImages">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/image3"
+            style="@style/StyleImages"
+            android:src="@drawable/animal_1_3_panda" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/container_photo4"
+        style="@style/StyleContainerImages">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/image4"
+            style="@style/StyleImages"
+            android:src="@drawable/animal_1_4_panda" />
+    </FrameLayout>
+
+    <androidx.constraintlayout.helper.widget.Flow
+        android:id="@+id/flow_images"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:padding="@dimen/_32sdp"
+        app:constraint_referenced_ids="container_photo1,container_photo2,container_photo3,container_photo4"
+        app:flow_horizontalGap="@dimen/_4sdp"
+        app:flow_maxElementsWrap="2"
+        app:flow_verticalGap="@dimen/_4sdp"
+        app:flow_wrapMode="chain"
+        app:layout_constraintBottom_toTopOf="@id/line_bottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/line_top" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/appCompatImageView"
+        android:layout_width="@dimen/_80sdp"
+        android:layout_height="@dimen/_80sdp"
+        android:src="@drawable/ic_level"
+        app:layout_constraintBottom_toTopOf="@id/line_bottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/line_top" />
+
+    <TextView
+        android:id="@+id/text_position"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/museosans900"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_20ssp"
+        app:layout_constraintBottom_toBottomOf="@+id/appCompatImageView"
+        app:layout_constraintEnd_toEndOf="@+id/appCompatImageView"
+        app:layout_constraintStart_toStartOf="@+id/appCompatImageView"
+        app:layout_constraintTop_toTopOf="@+id/appCompatImageView"
+        tools:text="10" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/line_top"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/line_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.6" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_start"
+        style="@style/StyleStartButton"
+        android:text="@string/text_play"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/line_bottom" />
+
+    <com.balysv.materialripple.MaterialRippleLayout
+        android:id="@+id/rate_us"
+        style="@style/RippleStyleWhite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/blue_grey_600"
+        android:padding="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/contact_us"
+        app:layout_constraintStart_toStartOf="@+id/button_start"
+        app:layout_constraintTop_toBottomOf="@+id/button_start">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:background="@color/color_button_start_default_stroke"
+            android:src="@drawable/ic_star" />
+
+    </com.balysv.materialripple.MaterialRippleLayout>
+
+    <com.balysv.materialripple.MaterialRippleLayout
+        android:id="@+id/contact_us"
+        style="@style/RippleStyleWhite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/blue_grey_600"
+        android:padding="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/share"
+        app:layout_constraintStart_toEndOf="@+id/rate_us"
+        app:layout_constraintTop_toBottomOf="@+id/button_start">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:background="@color/color_button_start_default_stroke"
+            android:src="@drawable/ic_mail" />
+
+    </com.balysv.materialripple.MaterialRippleLayout>
+
+    <com.balysv.materialripple.MaterialRippleLayout
+        android:id="@+id/share"
+        style="@style/RippleStyleWhite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/blue_grey_600"
+        android:padding="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/button_start"
+        app:layout_constraintStart_toEndOf="@+id/contact_us"
+        app:layout_constraintTop_toBottomOf="@+id/button_start">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:background="@color/color_button_start_default_stroke"
+            android:src="@drawable/ic_share" />
+
+    </com.balysv.materialripple.MaterialRippleLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

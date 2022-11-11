@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="uz.gita.a4pic1word">
+
+    <application
+        android:name=".app.App"
+        android:allowBackup="true"
+        android:icon="@drawable/logos"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/logos"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.4pic1word">
+        <activity
+            android:name=".mvp.ui.MainScreen"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".mvp.ui.GameScreenWithBinding" android:exported="true"/>
+        <activity android:name=".mvp.ui.SettingsScreen" android:exported="true" />
+
+    </application>
+
+</manifest>
